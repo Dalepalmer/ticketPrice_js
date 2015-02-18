@@ -3,7 +3,7 @@ var Ticket = {
   price: 3,
   ticketPrice: function() {
 
-    if (this.movie.movieTime.getHours() >= 17) {
+    if (this.time.getHours() >= 17) {
       this.price += 3;
     }
     if (this.movie.firstRelease) {
@@ -53,13 +53,20 @@ function parseTime(timeStr, dt) {
   return dt;
 }
 
-
+var movies = [];
 
 $(document).ready(function() {
+
 
   $("#chooseUser").click(function() {
     $(".chooseRole").hide();
     $(".user").show();
+    $("#movie-name").empty();
+    $("#movie-name").append("<option value='' selected='selected'>Select Movie</option>");
+    movies.forEach(function(movie) {
+      var htmlToInsert = "<option value='" + movie.name + "'>" + movie.name + "</option>";
+      $("#movie-name").append(htmlToInsert);
+    })
   });
 
   $("#chooseAdmin").click(function() {
@@ -81,14 +88,52 @@ $(document).ready(function() {
     inputtedScreenings.forEach(function(time) {
       screenings.push(parseTime(time))
     });
+    movies.push(createMovie(inputtedTitle, inputtedRelease, screenings));
 
-    debugger;
-
+    $(".form-control").val("");
+    $("#new-release").prop("checked", false);
     event.preventDefault();
-
   });
 
+ $("form#user-form").submit(function(event) {
+    var movieName = $("#movie-name").val();
+    var age = parseInt($("input#user-age").val());
+    var time = new Date($("#movie-time").val());
 
-  $('select#movie-name').selectToAutocomplete();
+    var ticket = Object.create(Ticket);
+    ticket.age = age;
+    ticket.time = time;
+    movies.forEach(function(movie) {
+      if (movie.name === movieName) {
+        ticket.movie = movie;
+      }
+    });
+
+    var userCost = ticket.ticketPrice();
+    alert(userCost);
+
+    event.preventDefault();
+ });
+
+
+  // $('select#movie-name').selectToAutocomplete();
+
+  $("#movie-name").change(function() {
+    var movieName = $("#movie-name").val();
+    var selectedMovie;
+    $(".hiddenBox").show();
+    movies.forEach(function(movie) {
+      if (movie.name === movieName) {
+        selectedMovie = movie;
+      }
+    });
+    $("#movie-time").empty();
+    $("#movie-time").append("<option value='' selected='selected'>Select Time</option>");
+    selectedMovie.showingTimes.forEach(function(time) {
+      var htmlToInsert = "<option value='" + time + "'>" + time + "</option>";
+      $("#movie-time").append(htmlToInsert);
+    })
+
+  });
 
 });

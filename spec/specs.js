@@ -4,7 +4,7 @@ describe("Ticket", function() {
     it("gives the base price back to us", function() {
       var testTicket = Object.create(Ticket);
       var testMovie = Object.create(Movie);
-      testMovie.movieName = "Selma";
+      testMovie.name = "Selma";
       testMovie.firstRelease = false;
       testMovie.movieTime = new Date(1001, 01, 01, 15, 00, 00);
       testTicket.movie = testMovie;
@@ -14,7 +14,7 @@ describe("Ticket", function() {
     it("gives the price for a senior ticket", function() {
       var testTicket = Object.create(Ticket);
       var testMovie = Object.create(Movie);
-      testMovie.movieName = "Selma";
+      testMovie.name = "Selma";
       testMovie.firstRelease = false;
       testTicket.movie = testMovie;
       testTicket.age = 55;
@@ -24,7 +24,7 @@ describe("Ticket", function() {
     it("gives the price for a first run ticket", function() {
       var testTicket = Object.create(Ticket);
       var testMovie = Object.create(Movie);
-      testMovie.movieName = "Fifty Shades of Grey";
+      testMovie.name = "Fifty Shades of Grey";
       testMovie.firstRelease = true;
       testMovie.movieTime = new Date(1001, 01, 01, 15, 00, 00);
       testTicket.movie = testMovie;
@@ -34,7 +34,7 @@ describe("Ticket", function() {
     it("gives the price for a prime time ticket", function() {
       var testTicket = Object.create(Ticket);
       var testMovie = Object.create(Movie);
-      testMovie.movieName = "Selma";
+      testMovie.name = "Selma";
       testMovie.firstRelease = false;
       testTicket.movie = testMovie;
       testTicket.age = 24;
@@ -44,7 +44,7 @@ describe("Ticket", function() {
     it("gives the price for a prime time first run ticket for an old person", function() {
       var testTicket = Object.create(Ticket);
       var testMovie = Object.create(Movie);
-      testMovie.movieName = "Fifty Shades of Grey";
+      testMovie.name = "Fifty Shades of Grey";
       testMovie.firstRelease = true;
       testTicket.movie = testMovie;
       testTicket.age = 99;
@@ -57,9 +57,9 @@ describe("Ticket", function() {
     it("assigns movie to ticket", function() {
       var testTicket = Object.create(Ticket);
       var testMovie = Object.create(Movie);
-      testMovie.movieName = "Fifty Shades of Grey";
+      testMovie.name = "Fifty Shades of Grey";
       testTicket.movie = testMovie;
-      expect(testTicket.movie.movieName).to.equal("Fifty Shades of Grey");
+      expect(testTicket.movie.name).to.equal("Fifty Shades of Grey");
     });
   });
 

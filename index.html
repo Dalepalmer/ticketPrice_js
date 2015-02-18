@@ -15,7 +15,7 @@
     <div class="container">
 
       <div class="chooseRole">
-        <h1>Kennedy School Theater</h1>
+        <h1>This Great Theater</h1>
         <p id="chooseUser">User</p>
         <p id="chooseAdmin">Admin</p>
       </div>
@@ -23,42 +23,24 @@
       <div class="user">
         <h1>Ticket Price Calc</h1>
 
-        <form id="ticket-form">
+        <form id="user-form">
 
           <div class="form-group">
             <label class="form-label" for="movie-name">Enter Movie Name</label>
             <select class="form-control" name="movie-name" id="movie-name" autofocus="autofocus" autocorrect="off" autocomplete="off">
-              <option value="" selected="selected">Select Movie Name</option>
-              <option value="Jupiter Ascending">Jupiter Ascending</option>
-              <option value="Seventh Son">Seventh Son</option>
-              <option value="The Loft">The Loft</option>
-              <option value="Mortdecai">Mortdecai</option>
-              <option value="The Boy Next Door">The Boy Next Door</option>
-              <option value="Strange Magic">Strange Magic</option>
-              <option value="Wild">Wild</option>
-              <option value="Selma">Selma</option>
-              <option value="Virunga">Virunga</option>
-              <option value="Boyhood">Boyhood</option>
-              <option value="The LEGO Movie">The LEGO Movie</option>
-              <option value="Nightcrawler">Nightcrawler</option>
-              <option value="Whiplash">Whiplash</option>
-              <option value="Interstellar">Interstellar</option>
-              <option value="Citizenfour">Citizenfour</option>
-              <option value="The Babadook">The Babadook</option>
-              <option value="The Grand Budapest Hotel">The Grand Budapest Hotel</option>
-              <option value="Birdman">Birdman</option>
-              <option value="Guardians of the Galaxy">Guardians of the Galaxy</option>
+              <option value="" selected="selected">Select Movie</option>
             </select>
           </div>
 
           <div class="hiddenBox form-group">
-            <label class="form-label" for="age">Enter age</label>
-            <input class="form-control" id="age" type="number" required>
+            <label class="form-label" for="movie-time">Select Time</label>
+            <select class="form-control" name="movie-time" id="movie-time" autofocus="autofocus" autocorrect="off" autocomplete="off">
+            </select>
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="age">Enter age</label>
-            <input class="form-control" id="age" type="number" required>
+            <label class="form-label" for="user-age">Enter age</label>
+            <input class="form-control" id="user-age" type="number" required>
           </div>
 
           <input type="submit" class="btn btn-sm btn-warning" value="Calculate">
@@ -81,11 +63,11 @@
           <ul class= "fields">
             <li>
               <label class="form-label" for="title">Title</label>
-              <input type="form-control" id="new-title" placeholder="Film Title" required>
+              <input class="form-control" id="new-title" placeholder="Film Title" required>
             </li>
             <li>
               <label class="form-label" for="times">Screenings</label>
-              <input type="form-control" id="new-times" placeholder="Showing times (24 hour format)" required>
+              <input class="form-control" id="new-times" placeholder="Showing times (24 hour format)" required>
             </li>
             <div class="form-group">
               <label><input type="checkbox" id="new-release" value="boolean">New Release?</label>
