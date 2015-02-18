@@ -25,37 +25,43 @@
 
         <form id="user-form">
 
-          <div class="form-group">
-            <label class="form-label" for="movie-name">Enter Movie Name</label>
-            <select class="form-control" name="movie-name" id="movie-name" autofocus="autofocus" autocorrect="off" autocomplete="off">
-              <option value="" selected="selected">Select Movie</option>
-            </select>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="form-label" for="movie-name">Enter Movie Name</label>
+                <select class="form-control" name="movie-name" id="movie-name" autofocus="autofocus" autocorrect="off" autocomplete="off">
+                  <option value="" selected="selected">Select Movie</option>
+                </select>
+              </div>
+
+              <div class="hiddenBox form-group">
+                <label class="form-label" for="movie-time">Select Time</label>
+                <select class="form-control" name="movie-time" id="movie-time" autofocus="autofocus" autocorrect="off" autocomplete="off">
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="user-age">Enter age</label>
+                <input class="form-control" id="user-age" type="number" required>
+              </div>
+
+              <input type="submit" class="btn btn-sm btn-warning" value="Calculate">
+            </form>
           </div>
 
-          <div class="hiddenBox form-group">
-            <label class="form-label" for="movie-time">Select Time</label>
-            <select class="form-control" name="movie-time" id="movie-time" autofocus="autofocus" autocorrect="off" autocomplete="off">
-            </select>
+          <div class="col-sm-6">
+            <div id="results">
+              <h5>
+                <p>Price: $<span id="costText"></span></p>
+                <p>Movie: <span id="movieText"></span></p>
+                <p>Time: <span id="timeText"></span></p>
+              </h5>
+            </div>
           </div>
-
-          <div class="form-group">
-            <label class="form-label" for="user-age">Enter age</label>
-            <input class="form-control" id="user-age" type="number" required>
-          </div>
-
-          <input type="submit" class="btn btn-sm btn-warning" value="Calculate">
-        </form>
-
-        <div id="results">
-          <h5>
-            Your ticket will cost $<span id="costText"></span>.<br>
-            Movie: <span id="movieText"></span><br>
-            Time: <span id="timeText"></span>
-          </h5>
         </div>
 
-          <hr>
-          <p class="back">Back</p>
+        <hr>
+        <p class="back">Back</p>
       </div>
 
       <div class="admin">

@@ -1,5 +1,5 @@
 var Ticket = {
-  theaterName: "Kennedy School Theater",
+  theaterName: "This Great Theater",
   price: 3,
   ticketPrice: function() {
 
@@ -110,7 +110,10 @@ $(document).ready(function() {
     });
 
     var userCost = ticket.ticketPrice();
-    alert(userCost);
+    $("#costText").append(userCost);
+    $("#movieText").append(movieName);
+    $("#timeText").append(time);
+    $("#results").show();
 
     event.preventDefault();
  });
@@ -130,8 +133,10 @@ $(document).ready(function() {
     $("#movie-time").empty();
     $("#movie-time").append("<option value='' selected='selected'>Select Time</option>");
     selectedMovie.showingTimes.forEach(function(time) {
-      var htmlToInsert = "<option value='" + time + "'>" + time + "</option>";
-      $("#movie-time").append(htmlToInsert);
+      if (! isNaN(time)) {
+        var htmlToInsert = "<option value='" + time + "'>" + time + "</option>";
+        $("#movie-time").append(htmlToInsert);
+      }
     })
 
   });
