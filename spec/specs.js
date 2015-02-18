@@ -6,9 +6,9 @@ describe("Ticket", function() {
       var testMovie = Object.create(Movie);
       testMovie.movieName = "Selma";
       testMovie.firstRelease = false;
+      testMovie.movieTime = new Date(1001, 01, 01, 15, 00, 00);
       testTicket.movie = testMovie;
       testTicket.age = 24;
-      testTicket.movieTime = 15;
       expect(testTicket.ticketPrice()).to.equal(3);
     });
     it("gives the price for a senior ticket", function() {
@@ -18,7 +18,7 @@ describe("Ticket", function() {
       testMovie.firstRelease = false;
       testTicket.movie = testMovie;
       testTicket.age = 55;
-      testTicket.movieTime = 15;
+      testMovie.movieTime = new Date(1001, 01, 01, 15, 00, 00);
       expect(testTicket.ticketPrice()).to.equal(1);
     });
     it("gives the price for a first run ticket", function() {
@@ -26,9 +26,9 @@ describe("Ticket", function() {
       var testMovie = Object.create(Movie);
       testMovie.movieName = "Fifty Shades of Grey";
       testMovie.firstRelease = true;
+      testMovie.movieTime = new Date(1001, 01, 01, 15, 00, 00);
       testTicket.movie = testMovie;
       testTicket.age = 24;
-      testTicket.movieTime = 15;
       expect(testTicket.ticketPrice()).to.equal(7);
     });
     it("gives the price for a prime time ticket", function() {
@@ -38,7 +38,7 @@ describe("Ticket", function() {
       testMovie.firstRelease = false;
       testTicket.movie = testMovie;
       testTicket.age = 24;
-      testTicket.movieTime = 19;
+      testMovie.movieTime = new Date(1001, 01, 01, 19, 00, 00);
       expect(testTicket.ticketPrice()).to.equal(6);
     });
     it("gives the price for a prime time first run ticket for an old person", function() {
@@ -48,7 +48,7 @@ describe("Ticket", function() {
       testMovie.firstRelease = true;
       testTicket.movie = testMovie;
       testTicket.age = 99;
-      testTicket.movieTime = 23;
+      testMovie.movieTime = new Date(1001, 01, 01, 23, 00, 00);
       expect(testTicket.ticketPrice()).to.equal(8);
     });
   });

@@ -14,6 +14,11 @@
   <body>
     <div class="container">
 
+      <div class="chooseRole">
+        <h1>Kennedy School Theater</h1>
+        <p id="chooseUser">User</p>
+        <p id="chooseAdmin">Admin</p>
+      </div>
 
       <div class="user">
         <h1>Ticket Price Calc</h1>
@@ -66,6 +71,9 @@
             Time: <span id="timeText"></span>
           </h5>
         </div>
+
+          <hr>
+          <p class="back">Back</p>
       </div>
 
       <div class="admin">
@@ -73,18 +81,20 @@
           <ul class= "fields">
             <li>
               <label class="form-label" for="title">Title</label>
-              <input type="form-control" id="title" placeholder="Film Title" required>
+              <input type="form-control" id="new-title" placeholder="Film Title" required>
             </li>
             <li>
               <label class="form-label" for="times">Screenings</label>
-              <input type="form-control" id="times" placeholder="Showing times (24 hour format)" required>
+              <input type="form-control" id="new-times" placeholder="Showing times (24 hour format)" required>
             </li>
             <div class="form-group">
-              <label><input type="checkbox" id="newRelease" value="">New Release?</label>
+              <label><input type="checkbox" id="new-release" value="boolean">New Release?</label>
             </div>
           <input type="submit" class="btn btn-sm btn-warning" value="Add">
         </form>
 
+        <hr>
+        <p class="back">Back</p>
 
 
       </div>
