@@ -28,7 +28,7 @@ body {
   background-color: #19053A;
 }
 
-.hiddenFrom, .hiddenTo, #hiddenCost {
+.hiddenBox, #results {
   display: none;
 }
 
@@ -77,7 +77,9 @@ h1 {
   margin-left: 33%;
 }
 
-
+#newRelease {
+  margin-top: 15px;
+}
 
 form {
   background: #FFEACC;
