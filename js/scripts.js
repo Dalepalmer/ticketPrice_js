@@ -57,27 +57,32 @@ var movies = [];
 
 $(document).ready(function() {
 
+  $("#chooseAdmin").click(function() {
+    var password = prompt("What is the admin password?")
+    if (password === "12345") {
+      $(".user").hide();
+      $(".admin").show();
+    } else {
+      alert("FAIL! STOP BREAKING IN.");
+    }
 
-  $("#chooseUser").click(function() {
-    $(".chooseRole").hide();
-    $(".user").show();
+
+  });
+
+  $(".back").click(function() {
+    $(".admin").hide();
     $("#movie-name").empty();
     $("#movie-name").append("<option value='' selected='selected'>Select Movie</option>");
+    $("#movie-time").empty();
+    $("#movie-time").append("<option value='' selected='selected'>Select Time</option>");
+    $("#user-age").val("");
+    $("#results span").empty();
+    $("#results").hide();
     movies.forEach(function(movie) {
       var htmlToInsert = "<option value='" + movie.name + "'>" + movie.name + "</option>";
       $("#movie-name").append(htmlToInsert);
     })
-  });
-
-  $("#chooseAdmin").click(function() {
-    $(".chooseRole").hide();
-    $(".admin").show();
-  });
-
-  $(".back").click(function() {
-    $(".user").hide();
-    $(".admin").hide();
-    $(".chooseRole").show();
+    $(".user").show();
   });
 
   $("form#admin-form").submit(function(event) {
@@ -110,10 +115,15 @@ $(document).ready(function() {
     });
 
     var userCost = ticket.ticketPrice();
-    $("#costText").append(userCost);
-    $("#movieText").append(movieName);
-    $("#timeText").append(time);
+    $("#costText").text(userCost);
+    $("#movieText").text(movieName);
+    $("#timeText").text(time);
     $("#results").show();
+
+    $("#movie-name").val("Select Movie");
+    $("#movie-time").empty();
+    $("#movie-time").append("<option value='' selected='selected'>Select Time</option>");
+    $("#user-age").val("");
 
     event.preventDefault();
  });

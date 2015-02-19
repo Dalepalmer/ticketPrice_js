@@ -1,0 +1,34 @@
+<link href="test.css" rel="stylesheet" type="text/css">
+
+
+<h1>Rotating dashed border</h1>
+
+<p>Hover over target to trigger animation</p>
+
+<div class="rotating-dashed">
+  <span class="dashing"><i></i></span>
+  <span class="dashing"><i></i></span>
+  <span class="dashing"><i></i></span>
+  <span class="dashing"><i></i></span>
+  <strong>&#x279C;</strong>
+</div>
+
+<p>Re:  <a href="https://twitter.com/maxart/status/25253247161733120">maxart</a>: I'd be really interested to know how people would replicate this <a href="http://f.cl.ly/items/0A282x0M3C3i1N2f3m2M/dragndrop.mov">(animated drop target)</a> with web technologies  / @deaxon ? @desandro ?</p>
+
+<p>See <a href="http://playground.deaxon.com/css/rotating-dashed-border/">Benjamin De Cock&rsquo;s solution</a>.</p>
+
+<h2>Pros</h2>
+
+<ul>
+  <li>No images</li>
+  <li>Only one animation declation</li>
+</ul>
+
+<h2>Cons</h2>
+
+<ul>
+  <li>No rounded corners</li>
+  <li>WebKit only</li>
+  <li>Border dashes are in sync only when the dimensions of the target are a multiple of 30. Probably won't be in sync for other browsers who render dashed borders differently.</li>
+  <li>Requires additional tag inside border element</li>
+</ul>
